@@ -1,0 +1,6 @@
+.flex {
+  display: flex;
+}
+#signup_table {
+    flex: 1;
+  }

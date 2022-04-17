@@ -12,15 +12,18 @@ const axios = require("axios")
 
 
 /* load the models here - if you have/need models */
-
+const user = require("./models/User")
 /* load the JSON objects here if you have them */
 
+
 /* initialize the database*/
-const mongoose = app.require('mongoose');
-const mongoose_URI = 'mongodb+srv://aartijain:liberty312001@cluster0.wzkxj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const mongoose = require('mongoose');
+const mongodb_URI = 'mongodb+srv://aartijain:liberty312001@cluster0.wzkxj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 mongoose.connect( mongodb_URI, { useNewUrlParser: true, useUnifiedTopology: true } );
 
 const db = mongoose.connection; //connects to the database
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {console.log("we are connected!!!")});
 
 /* initialize the express server */
 const app = express();
@@ -32,11 +35,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-//specify that the static data will be located in the "public" folder
+// Here we specify that static files will be in the public folder
 app.use(express.static(path.join(__dirname, "public")));
 
-/* Authentication */
-
+// Here we enable session handling using cookies
 app.use(
   session({
     secret: "zzbbyanana789sdfa8f9ds8f90ds87f8d9s789fds", // this ought to be hidden in process.env.SECRET
@@ -45,9 +47,53 @@ app.use(
   })
 );
 
-// here is the code which handles all /login /signin /logout routes
+/* Setting the port */
+const port = "5000";
+app.set("port", port);
+
+// and now we startup the server listening on that port
+const http = require("http");
+const server = http.createServer(app);
+
+server.listen(port);
+
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
+  debug("Listening on " + bind);
+
+}
+function onError(error) {
+  if (error.syscall !== "listen") {
+    throw error;
+  }
+
+  var bind = typeof port === "string" ? "Pipe " + port : "Port " + port;
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case "EACCES":
+      console.error(bind + " requires elevated privileges");
+      process.exit(1);
+      break;
+    case "EADDRINUSE":
+      console.error(bind + " is already in use");
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+server.on("error", onError);
+
+server.on("listening", onListening);
+
+module.exports = app;
+
+/*Authentication*/
 const auth = require('./routes/auth');
-const { deflateSync } = require("zlib");
+const Movie = require("./models/Movie");
 app.use(auth)
 
 // middleware to test is the user is logged in, and if not, send them to the login page
@@ -55,26 +101,32 @@ const isLoggedIn = (req,res,next) => {
   if (res.locals.loggedIn) {
     next()
   }
-  else res.redirect('/login')
+  else res.redirect('/')
 }
-
-
 
 //Routing 
 app.get("/", (req, res, next) => {
     res.render("login");
   });
 
-app.get("/new", (req,res,next)=> {
+app.get("/new", isLoggedIn, async(req,res,next)=> {
     res.render("new");
 });
 
-app.get("/user_homepage", (req, res,next)=>{
-  res.render("homepage");
 
+app.get("/home",isLoggedIn, async(req,res,next)=>{
+    res.render("homepage");
 });
 
-app.post("/addMovie", (req,res,next)=>{
-  //save to database here
-});
 
+app.post("/addMovie",(req,res,next)=>{
+  const {movie_title,movie_director,year_released} = req.body
+  const newMovie = new Movie({
+      Title:movie_title,
+      Year:year_released,
+      Director:movie_director
+  });
+
+  newMovie.save()
+  res.redirect('/new')
+});

@@ -1,35 +1,53 @@
-
+<style>
+    h1 {text-align: center;}
+    h3 {text-align: center;}
+    p {text-indent: 100px}
+</style>
 <body style="background-color:#f5decf;" >
-    <div class="row">
-      
-        <div class="col-sm-5">
-            <h2>Welcome to the movie app! Please login</h2>
-            <form method="post" action="/login">
-                Username: <input type="text"
-                                 autocomplete="username"
-                                 name="username"><br>
-                Password: <input  type="password"
-                                    autocomplete="passphrase"
-                                    name="passphrase"><br>
-                <input type="submit">
-            </form>
-        </div>
-      
-        <div class="col-sm-2" style="text-align:center">
-            OR
-        </div>
-      
-        <div class="col-sm-5">
-            <h2>Signup</h2>
-            <form method="post" action="/signup">
-                username: <input type="text" autocomplete="username" name="username"><br>
-                password
-                   <input type="password" autocomplete="passphrase" name="passphrase"><br>
-                confirm password:
-                    <input type="password" name="passphrase2"><br>
-                <input type="submit">
-            </form>
-        </div>
+    <h1>Welcome to the movie app!</h1>
+    <hr width="40%">
+    <table>
+        <tr>
+            <td>
+                <div class="col-sm-5">
+                    <h2>Login</h2>
+                    <form method="post" action="/login">
+                        Username: <input type="text" autocomplete="username" name="username"><br>
+                        Password: <input  type="password" autocomplete="passphrase" name="passphrase"><br>
+                        <input type="submit">
+                    </form>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td>
+                <div class="col-sm-2" style="text-align:left">
+                    OR
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div id="signup_table">
+    <table>
+        
+        <tr>
+            <td>
+                <div class="col-sm-5">
+                    <h2>Signup</h2>
+                    <form method="post" action="/signup">
+                        Username: <input type="text" autocomplete="username" name="username"><br>
+                        Password
+                           <input type="password" autocomplete="passphrase" name="passphrase"><br>
+                        Password Confirmation:
+                            <input type="password" name="passphrase2"><br>
+                        <input type="submit">
+                    </form>
+                </div>
+            </td>
+        </tr>
+    </table>
     </div>
 </body>
 
