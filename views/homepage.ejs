@@ -1,7 +1,8 @@
+
 <style>
     h1 {text-align: center;}
     h3 {text-align: center;}
-    p {text-indent: 100px}
+    p {text-indent: 50px}
 </style>
 <body style="background-color:#f5decf;" >
 
@@ -9,12 +10,23 @@
         <h1>Movie App </h1>
         <h3> Welcome back</h3>
     </div>
+    <div>
+        <a href="/logout"> Logout</a>
+    </div>
     <hr style="width: 40%">
     <div>
+        <% if(items.length > 0) {%>
         <p>My Movies:</p>
         <ul>
-            
+            <%for(item of items){%>
+                <li>
+                    <%=item.Title%>
+                </li>
+            <%}%>
         </ul>
+        <%} else{%>
+            <p> No movies to display!</p>
+        <%}%>
     </div>
     <a href="/new"> Add a new movie</a>
 </body>

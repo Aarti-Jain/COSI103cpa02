@@ -115,14 +115,19 @@ app.get("/new", isLoggedIn, async(req,res,next)=> {
 
 
 app.get("/home",isLoggedIn, async(req,res,next)=>{
+    let userId = res.locals.user._id;  // get the user's id
+    let items = await Movie.find({userId:userId}); // lookup the user's movie items
+    res.locals.items = items;  //make the items available in the view
     res.render("homepage");
 });
 
 
 app.post("/addMovie",(req,res,next)=>{
-  const {movie_title,movie_director,year_released} = req.body
+  const userId = res.locals.user._id;
+  const {movie_name,movie_director,year_released} = req.body
   const newMovie = new Movie({
-      Title:movie_title,
+      userId:userId,
+      Title:movie_name,
       Year:year_released,
       Director:movie_director
   });
