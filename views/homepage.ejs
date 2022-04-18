@@ -2,21 +2,39 @@
 <style>
     h1 {text-align: center;}
     h3 {text-align: center;}
-    p {text-indent: 50px}
+    p {text-indent: 500px}
+    a {text-decoration:none}
+    .center {
+        display: flex;
+        justify-content: center;
+        }
+    ul{
+        display: table; 
+        margin: 0 auto;
+        text-align: left;
+    }
+    #indented {text-indent:500px; }
+    .image{
+        position: relative;
+        margin-left: 1000px;
+        bottom: 40px;    
+    }
 </style>
 <body style="background-color:#f5decf;" >
 
     <div>
         <h1>Movie App </h1>
-        <h3> Welcome back <%=username%></h3>
+        <h3> Welcome <%=username%></h3>
     </div>
     <div>
         <a href="/logout"> Logout</a>
     </div>
     <hr style="width: 40%">
     <div>
-        <% if(items.length > 0) {%>
         <p>My Movies:</p>
+    </div>
+    <div>
+        <% if(items.length > 0) {%>
         <ul>
             <%for(item of items){%>
                 <li>
@@ -28,5 +46,14 @@
             <p> No movies to display!</p>
         <%}%>
     </div>
-    <a href="/new"> Add a new movie</a>
+    <div id="indented">
+        <a href="/new"> Add a new movie</a>
+    </div>
+    <div id="indented">
+         Search for a movie: 
+    </div>
+    <div class="image">
+        <img src="images/cartoon_popcorn.png" width="55%">
+    </div>
+    
 </body>

@@ -2,38 +2,31 @@
     h1 {text-align: center;}
     h3 {text-align: center;}
     p {text-indent: 100px}
+    .center {
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 20px;
+        }
+    .image{
+        position: absolute;
+        margin-left: 480px;
+        bottom: 40px;    
+    }
 </style>
 <body style="background-color:#f5decf;" >
     <h1>Welcome to the movie app!</h1>
     <hr width="40%">
-    <table>
-        <tr>
-            <td>
+    <div class="center">
                 <div class="col-sm-5">
                     <h2>Login</h2>
                     <form method="post" action="/login">
                         Username: <input type="text" autocomplete="username" name="username"><br>
                         Password: <input  type="password" autocomplete="passphrase" name="passphrase"><br>
-                        <input type="submit">
+                        <input type="submit" value="login">
                     </form>
                 </div>
-            </td>
-        </tr>
-    </table>
-    <table>
-        <tr>
-            <td>
-                <div class="col-sm-2" style="text-align:left">
-                    OR
-                </div>
-            </td>
-        </tr>
-    </table>
+                OR
     <div id="signup_table">
-    <table>
-        
-        <tr>
-            <td>
                 <div class="col-sm-5">
                     <h2>Signup</h2>
                     <form method="post" action="/signup">
@@ -42,12 +35,14 @@
                            <input type="password" autocomplete="passphrase" name="passphrase"><br>
                         Password Confirmation:
                             <input type="password" name="passphrase2"><br>
-                        <input type="submit">
+                        <input type="submit" value="signup">
                     </form>
                 </div>
-            </td>
-        </tr>
-    </table>
     </div>
+   
+</div>
+<div class="image">
+    <img src="images/movie_image.png" width="40%">
+</div>
 </body>
 
