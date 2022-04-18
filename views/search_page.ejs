@@ -1,0 +1,19 @@
+<body style="background-color:#f5decf;" >
+    <%if(movies.length > 0){%>
+        <%for(movie of movies){%>
+        <ul>
+            <li>
+                Title: <%=movie.Title %> <br>
+                Directed by: <%=movie.Director %> <br>
+                Released in: <%=movie.Year%>
+            </li>
+        </ul>
+        <%}%>
+    <%}else{%>
+        No results found!
+    <%}%>
+
+    <div class="col">
+        <a href="/home"> Back to homepage</a>
+    </div>
+</body>

@@ -50,7 +50,10 @@
         <a href="/new"> Add a new movie</a>
     </div>
     <div id="indented">
-         Search for a movie: 
+        <form method="post" action="/search">
+         Search for a movie: <input type="text" name="movie_name">
+         <input type="submit" value= "search" class="mt-5">
+        </form>
     </div>
     <div class="image">
         <img src="images/cartoon_popcorn.png" width="55%">

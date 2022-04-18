@@ -135,3 +135,12 @@ app.post("/addMovie",(req,res,next)=>{
   newMovie.save()
   res.redirect('/new')
 });
+
+app.post("/search",async (req,res,next)=>{
+  let obj = JSON.parse(JSON.stringify(req.body));
+  let movie_title = obj.movie_name
+  let movies = await Movie.find({Title: movie_title.trim()});
+  res.locals.movies = movies;
+  res.render("search_page",{ movies: movies})
+
+});
