@@ -10,8 +10,8 @@
       justify-content: center;
       }
   ul{
-      display: table; 
-      margin: 0 auto;
+      width: 23%;
+      margin-left: 550px;
       text-align: left;
   }
   #indented {text-indent:500px; }
@@ -35,6 +35,6 @@
       bottom: 40px;    
   }
   .navbar{
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
   
