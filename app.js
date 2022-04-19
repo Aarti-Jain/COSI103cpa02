@@ -18,8 +18,8 @@ const user = require("./models/User")
 
 /* initialize the database*/
 const mongoose = require('mongoose');
-const mongodb_URI = 'mongodb+srv://aartijain:liberty312001@cluster0.wzkxj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-mongoose.connect( mongodb_URI, { useNewUrlParser: true, useUnifiedTopology: true } );
+require('dotenv').config();
+mongoose.connect( process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true } );
 
 const db = mongoose.connection; //connects to the database
 db.on('error', console.error.bind(console, 'connection error:'));
