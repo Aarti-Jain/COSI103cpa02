@@ -34,6 +34,7 @@ app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(layouts);
 
 // Here we specify that static files will be in the public folder
 app.use(express.static(path.join(__dirname, "public")));
@@ -139,8 +140,16 @@ app.post("/addMovie",(req,res,next)=>{
 app.post("/search",async (req,res,next)=>{
   let obj = JSON.parse(JSON.stringify(req.body));
   let movie_title = obj.movie_name
-  let movies = await Movie.find({Title: movie_title.trim()});
+  let movies = await Movie.find({Title: {$regex: movie_title}});
   res.locals.movies = movies;
   res.render("search_page",{ movies: movies})
 
+});
+app.get("/about", (req,res,next)=>{
+  res.render("about")
+
+});
+
+app.get("/feedback", (req,res,next)=>{
+  res.render("feedback")
 });

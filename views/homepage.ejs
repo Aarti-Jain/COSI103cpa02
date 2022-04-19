@@ -1,37 +1,12 @@
-
-<style>
-    h1 {text-align: center;}
-    h3 {text-align: center;}
-    p {text-indent: 500px}
-    a {text-decoration:none}
-    .center {
-        display: flex;
-        justify-content: center;
-        }
-    ul{
-        display: table; 
-        margin: 0 auto;
-        text-align: left;
-    }
-    #indented {text-indent:500px; }
-    .image{
-        position: relative;
-        margin-left: 1000px;
-        bottom: 40px;    
-    }
-</style>
 <body style="background-color:#f5decf;" >
 
     <div>
-        <h1>Movie App </h1>
+        <h1>Movie Wishlist App </h1>
         <h3> Welcome <%=username%></h3>
     </div>
+    <hr style="width: 80%; margin-left: 150px;">
     <div>
-        <a href="/logout"> Logout</a>
-    </div>
-    <hr style="width: 40%">
-    <div>
-        <p>My Movies:</p>
+        <p>My Wishlist:</p>
     </div>
     <div>
         <% if(items.length > 0) {%>
@@ -47,11 +22,11 @@
         <%}%>
     </div>
     <div id="indented">
-        <a href="/new"> Add a new movie</a>
+        <a href="/new"> Add a movie to my wishlist</a>
     </div>
     <div id="indented">
         <form method="post" action="/search">
-         Search for a movie: <input type="text" name="movie_name">
+         Search for a movie by title: <input type="text" name="movie_name" placeholder="e.g. Clueless">
          <input type="submit" value= "search" class="mt-5">
         </form>
     </div>

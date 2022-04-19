@@ -1,33 +1,16 @@
-<style>
-    h1 {text-align: center;}
-    h3 {text-align: center;}
-    p {text-indent: 100px}
-    .center {
-        display: flex;
-        justify-content: space-evenly;
-        padding-top: 20px;
-        }
-    .image{
-        position: absolute;
-        margin-left: 480px;
-        bottom: 40px;    
-    }
-</style>
 <body style="background-color:#f5decf;" >
-    <h1>Welcome to the movie app!</h1>
-    <hr width="40%">
-    <div class="center">
+    <h1>Welcome to the Movie Wishlist App!</h1>
+    <hr style="width: 80%; margin-left: 150px;">
+    <div class="center-forms">
                 <div class="col-sm-5">
                     <h2>Login</h2>
                     <form method="post" action="/login">
                         Username: <input type="text" autocomplete="username" name="username"><br>
-                        Password: <input  type="password" autocomplete="passphrase" name="passphrase"><br>
+                        Password: <input type="password" autocomplete="passphrase" name="passphrase"><br>
                         <input type="submit" value="login">
                     </form>
                 </div>
-                OR
-    <div id="signup_table">
-                <div class="col-sm-5">
+                <div class="col-sm-5" style="padding-bottom: 25px;"> 
                     <h2>Signup</h2>
                     <form method="post" action="/signup">
                         Username: <input type="text" autocomplete="username" name="username"><br>
@@ -38,11 +21,10 @@
                         <input type="submit" value="signup">
                     </form>
                 </div>
-    </div>
    
-</div>
-<div class="image">
-    <img src="images/movie_image.png" width="40%">
+    </div>
+<div class="image-login">
+    <img src="images/movie_image.png" width="35%">
 </div>
 </body>
 
