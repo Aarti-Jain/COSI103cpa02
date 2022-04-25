@@ -30,9 +30,9 @@
       padding-top: 20px;
       }
   .image-login{
-      position: absolute;
+      position: relative;
       margin-left: 555px;
-      bottom: 40px;    
+      bottom: 5px;    
   }
   .navbar{
     justify-content: space-evenly;
