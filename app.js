@@ -153,3 +153,7 @@ app.get("/about", (req,res,next)=>{
 app.get("/feedback", (req,res,next)=>{
   res.render("feedback")
 });
+
+app.post("/leave_feedback",(req,res,next)=>{
+    res.redirect("/feedback")
+});
