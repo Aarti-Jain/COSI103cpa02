@@ -17,7 +17,18 @@ LOCAL INSTALLATION INSTRUCTIONS
 
 USAGE INSTRUCTIONS
 1. log in to the app with your username and password. If you are new, sign up for a new account
-<img width="1440" alt="Screen Shot 2022-04-26 at 10 56 56 AM" src="https://user-images.githubusercontent.com/64444458/165329651-cb4451cc-159f-4269-b1a1-f1a6205155a9.png">
+
+
+<img width="1109" alt="Screen Shot 2022-04-26 at 10 57 58 AM" src="https://user-images.githubusercontent.com/64444458/165329875-c7c7c54d-016c-4278-8471-1500ac9446b8.png">
+
+2. Once you are logged in, you will be able to see your list of movies
+
+
+<img width="879" alt="Screen Shot 2022-04-26 at 10 59 01 AM" src="https://user-images.githubusercontent.com/64444458/165330154-3a3ab0af-51d1-4a7f-8b39-0f03bd010075.png">
+
+3. Click the "add movie to my wishlist" to add a new movie 
+
+<img width="1439" alt="Screen Shot 2022-04-26 at 10 59 41 AM" src="https://user-images.githubusercontent.com/64444458/165330319-7dc102ac-1ca7-4155-951e-4c3273f47051.png">
 
 
 
