@@ -2,9 +2,11 @@
 Author: Aarti Jain
 This is the README.md for COSI103 CPA02
 
-This app is a movie wishlist app. The idea is that users can enter the movies that they want to see or the movies they haven't gotten around to seeing yet
+This app is a movie wishlist app(similar to Netflix's 'my list' feature). The idea is that users can enter the movies that they want to see or the movies they haven't gotten around to seeing yet
 and the app will maintain a list for you. Users can add new movies at any time, and search across the database to find movies in other wishlists 
 that they would like to add to their own. 
+
+Link to app pitch/demo of proof of concept: https://zoom.us/rec/play/mb764EVK5YD5UrGbxAB-gPWwrhWHGYXkZAxruhD-pTlsBUSRHwEZdP93NISvrE6JWBEfCwftFDQHCiPK.bIlkeJ4qsWH0iTz8?autoplay=true&startTime=1650988905000
 
 In order to use the app, you can visit this link: https://afternoon-tundra-48175.herokuapp.com/ or, you can also install the app locally. 
 
