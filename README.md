@@ -9,7 +9,7 @@ that they would like to add to their own.
 In order to use the app, you can visit this link: https://afternoon-tundra-48175.herokuapp.com/
 You can also install the app locally. 
 
-#LOCAL INSTALLATION INSTRUCTIONS
+LOCAL INSTALLATION INSTRUCTIONS
 1. cd into the directory you want to store the project in. 
 2. Clone this project. 
 3. run ``npm install``
