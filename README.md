@@ -15,6 +15,9 @@ LOCAL INSTALLATION INSTRUCTIONS
 3. run ``npm install``
 4. run ``node app.js``
 
+USAGE INSTRUCTIONS
+1. log in to the app with your username and password. If you are new, sign up for a new account
+<img width="1440" alt="Screen Shot 2022-04-26 at 10 56 56 AM" src="https://user-images.githubusercontent.com/64444458/165329651-cb4451cc-159f-4269-b1a1-f1a6205155a9.png">
 
 
 
